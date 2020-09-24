@@ -1,4 +1,4 @@
-# MTEC Presence Tracking
+# MTEC Presence Tracing
 
 This tool serves the pure purpose to fill the MTEC presence tracing form faster.
 
