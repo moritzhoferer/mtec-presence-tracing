@@ -36,7 +36,7 @@ def open_firefox(headless=True) -> webdriver.firefox.webdriver.WebDriver:
 
 def load_user_data() -> dict:
     _dict = pd.read_csv(
-        './user_data.csv',
+        user_data_path,
         header=None,
         index_col=0,
         squeeze=True,
@@ -183,7 +183,10 @@ def main() -> None:
         ec.element_to_be_clickable((By.NAME, 'formFinish')))
     finish_button.click()
     
-    driver.quit()   
+    driver.quit() 
+
+    if os.path.exists('./geckodriver.log'):
+        os.remove('./geckodriver.log')  
 
 
 if __name__ == '__main__':
