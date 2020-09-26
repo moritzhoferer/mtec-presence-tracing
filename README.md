@@ -37,7 +37,10 @@ Add these lines to the `~/.bashrc` or `~/.bash_aliases` file:
 
 ``` {bash}
 # MTEC presence tracing
-alias mtec-presence-tracing='python3 $SCRIPTDIR/main.py '
+alias mtec-presence-tracing='python3 $SCRIPTDIR/mtec_presence_tracing.py '
+
+#MTEC presence tracing - setup
+alias mtec-setup='python3 $SCRIPTDIR/setup.py'
 ```
 
 by executing `add_alias.sh`.

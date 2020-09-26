@@ -1,8 +1,8 @@
 #! /bin/bash
 
-SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPTDIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-FILEINPUT="# MTEC presence tracing\nalias mtec-presence-tracing='python3 $SCRIPTPATH/mtec_presence_tracing.py '\n\n#MTEC presence tracing - setup\nalias mtec-setup='python3 $SCRIPTPATH/setup.py'\n"
+FILEINPUT="# MTEC presence tracing\nalias mtec-presence-tracing='python3 $SCRIPTDIR/mtec_presence_tracing.py '\n\n#MTEC presence tracing - setup\nalias mtec-setup='python3 $SCRIPTPATH/setup.py'\n"
 
 if [ -f ~/.bash_aliases ]; then
 echo  -e $FILEINPUT >> ~/.bash_aliases
