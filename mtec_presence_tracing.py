@@ -25,15 +25,6 @@ def open_firefox(headless=True) -> webdriver.firefox.webdriver.WebDriver:
     return webdriver.Firefox(executable_path='geckodriver', options=_driver_options)
     
 
-# def open_chrome(headless=True):
-#     print('Opening Chrome...')
-#     from selenium.webdriver.chrome.options import Options
-#     _driver_options = Options()
-#     if headless:
-#         _driver_options.add_argument('-headless')
-#     return webdriver.Chrome(executable_path='chromedriver', options=_driver_options)
-
-
 def load_user_data() -> dict:
     _dict = pd.read_csv(
         user_data_path,
@@ -125,6 +116,7 @@ def setup() -> None:
     user_data = inquirer.prompt(questions)
     pd.Series(user_data).to_csv(user_data_path)
     print('Successfully saved user data.')
+
 
 def main() -> None:
     if not os.path.exists(user_data_path):
