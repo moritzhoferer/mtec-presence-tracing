@@ -20,6 +20,20 @@ run mtec_presence_tracing.py hhmm hhmm
 
 If you want to change your data, you can run the `setup.py` script or manipulate the `user_data.csv` file manually.
 
+## Set up aliases on Linux or Mac
+
+To make life easier, you can also define aliases. Add these lines to the `~/.bashrc` or `~/.bash_aliases` file:
+
+``` {bash}
+# MTEC presence tracing
+alias mtec-presence-tracing='python3 $SCRIPTDIR/mtec_presence_tracing.py '
+
+#MTEC presence tracing - setup
+alias mtec-setup='python3 $SCRIPTDIR/setup.py'
+```
+
+or execute `add_alias.sh`. Afterwards, you run `source ~/.bashrc`.
+
 ## Requirements
 
 You need the following programs and packages:
@@ -30,17 +44,3 @@ You need the following programs and packages:
 * [Geckodriver for Firefox](https://github.com/mozilla/geckodriver): `sudo apt install firefox-geckodriver`
 
 Command line commands are for Debian, Ubuntu, and related Linux distributions using Advanced Package Tool.
-
-## Set up alias on Linux or Mac
-
-Add these lines to the `~/.bashrc` or `~/.bash_aliases` file:
-
-``` {bash}
-# MTEC presence tracing
-alias mtec-presence-tracing='python3 $SCRIPTDIR/mtec_presence_tracing.py '
-
-#MTEC presence tracing - setup
-alias mtec-setup='python3 $SCRIPTDIR/setup.py'
-```
-
-by executing `add_alias.sh`.
