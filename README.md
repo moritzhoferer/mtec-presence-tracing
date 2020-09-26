@@ -25,8 +25,11 @@ If you want to change your data, you can run the `setup.py` script or manipulate
 You need the following programs and packages:
 
 * [Python 3](https://www.python.org/download/releases/3.0/)
-* [Selenium](https://selenium-python.readthedocs.io/)
-* Geckodriver for Firefox or Chrome
+* [Selenium](https://selenium-python.readthedocs.io/): `python3 -m pip install selenium`
+* [Firefox](https://www.mozilla.org/en-US/firefox/all/#product-desktop-release): `sudo apt update && sudo apt install firefox`
+* [Geckodriver for Firefox](https://github.com/mozilla/geckodriver): `sudo apt install firefox-geckodriver`
+
+Command line commands are for Debian, Ubuntu, and related Linux distributions using Advanced Package Tool.
 
 ## Set up alias on Linux or Mac
 
