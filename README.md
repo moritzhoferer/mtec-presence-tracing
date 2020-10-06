@@ -4,13 +4,21 @@ This tool serves the pure purpose to fill the MTEC presence tracing form faster.
 
 ## How to use
 
-Execute in terminal with:
+Setup virtual environment (`./venv/`) in the directory of the repository, activate it and install requirements (`./requirements.txt`):
+
+```{bash}
+python3 -m venv venv
+source ./venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+To fill the form, execute this in terminal:
 
 ``` {bash}
 ./mtec_presence_tracing.py hhmm hhmm
 ```
 
-where the first time is the arrival and the second the departure time. The date is automatically for today.
+where the first time is the arrival and the second the departure time. The date is automatically for today. If you run the program the first time, the program asks you to enter your data.
 
 In a Python GUI you navigate to the respective directory and execute
 
@@ -18,7 +26,7 @@ In a Python GUI you navigate to the respective directory and execute
 run mtec_presence_tracing.py hhmm hhmm
 ```
 
-If you want to change your data, you can run the `setup.py` script or manipulate the `user_data.csv` file manually.
+If you want to change your data, you can run the `./setup.py` script or manipulate the `./user_data.csv` file manually.
 
 ## Set up aliases on Linux or Mac
 
