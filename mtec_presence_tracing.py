@@ -152,6 +152,14 @@ def main() -> None:
     departure_time_box.clear()
     departure_time_box.send_keys(departure_time)
 
+    if len(sys.argv) > 3:
+        if len(sys.argv[3]) == 5:
+            alt_location = sys.argv[3]
+            if alt_location[:3].upper() in building_list:
+                user_data['building'] = alt_location[:3].upper()
+                user_data['floor'] = alt_location[3].upper()
+                user_data['room'] = alt_location[4:]
+
     building_box = driver.find_element_by_id(id_prefix + 'building')
     building_box.send_keys(user_data['building'])
 
