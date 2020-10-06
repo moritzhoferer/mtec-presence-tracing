@@ -1,5 +1,10 @@
+# Folder from the IDEs
 __pycache__
 .vscode
 
+# User and browser data
 geckodriver.log
 user_data.csv
+
+# Virtual environment
+venv
