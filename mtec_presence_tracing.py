@@ -180,7 +180,7 @@ def main() -> None:
     if os.path.exists('./geckodriver.log'):
         os.remove('./geckodriver.log')  
 
-    print('Successfully fill and submitted D-MTEC Presence Tracing form!')
+    print('Successfully filled and submitted D-MTEC Presence Tracing form!')
 
 
 if __name__ == '__main__':
