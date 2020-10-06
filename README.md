@@ -52,3 +52,7 @@ You need the following programs and packages:
 * [Geckodriver for Firefox](https://github.com/mozilla/geckodriver): `sudo apt install firefox-geckodriver`
 
 Command line commands are for Debian, Ubuntu, and related Linux distributions using Advanced Package Tool.
+
+## TODOs
+
+* Add feature to add deviating room without changing the default user data.
