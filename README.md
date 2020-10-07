@@ -55,4 +55,4 @@ Command line commands are for Debian, Ubuntu, and related Linux distributions us
 
 ## TODOs
 
-- [x] Add feature to add deviating room without changing the default user data.
+* [x] Add feature to add deviating room without changing the default user data.

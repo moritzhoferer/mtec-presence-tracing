@@ -186,10 +186,29 @@ def main() -> None:
     driver.quit() 
 
     if os.path.exists('./geckodriver.log'):
-        os.remove('./geckodriver.log')  
+        os.remove('./geckodriver.log')
 
+    print_user_data(user_data, arrival_time, departure_time)
     print('Successfully filled and submitted D-MTEC Presence Tracing form!')
 
+
+def print_user_data(_dict, _from, _to) -> None:
+    _out_str = 'Name:     {first_name:s} {last_name}\n' +\
+               'E-Mail:   {mail_address:s}\n' +\
+               'Location: {building:s} {floor:s} {room:s}\n' +\
+               'From {f:s} to {t:s}\n'
+
+    print(
+        _out_str.format(
+            first_name=_dict['first_name'],
+            last_name=_dict['last_name'],
+            mail_address=_dict['mail_address'],
+            building=_dict['building'],
+            floor=_dict['floor'],
+            room=_dict['room'],
+            f=_from, t=_to,
+        )
+    )
 
 if __name__ == '__main__':
     main()
