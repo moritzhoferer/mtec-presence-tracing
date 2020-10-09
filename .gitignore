@@ -1,6 +1,7 @@
 # Folder from the IDEs
 __pycache__
 .vscode
+.idea
 
 # User and browser data
 geckodriver.log
