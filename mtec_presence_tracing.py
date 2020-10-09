@@ -9,6 +9,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
+if 'win' in sys.platform:
+    import geckodriver_autoinstaller
+    geckodriver_autoinstaller.install()
+
 script_dir = os.path.dirname(os.path.realpath(__file__))
 user_data_path = script_dir + '/user_data.csv'
 
@@ -209,6 +213,7 @@ def print_user_data(_dict, _from, _to) -> None:
             f=_from, t=_to,
         )
     )
+
 
 if __name__ == '__main__':
     main()
