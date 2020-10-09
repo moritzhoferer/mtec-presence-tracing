@@ -12,6 +12,8 @@ source ./venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
+Additionally, you need to install Firefox and the Geckodriver for Firefox and then you are ready to go.
+
 To fill the form, execute this in terminal:
 
 ``` {bash}
@@ -27,6 +29,12 @@ run mtec_presence_tracing.py hhmm hhmm
 ```
 
 If you want to change your data, you can run the `./setup.py` script or manipulate the `./user_data.csv` file manually.
+
+If you have a meeting in a different room, you can change the building, floor and room number for one time:
+
+``` {bash}
+./mtec_presence_tracing.py hhmm hhmm buildingfloorroom
+```
 
 ## Set up aliases on Linux or Mac
 
@@ -56,3 +64,4 @@ Command line commands are for Debian, Ubuntu, and related Linux distributions us
 ## TODOs
 
 * [x] Add feature to add deviating room without changing the default user data.
+* [] Restructure to make it easier to understand and to follow the instructions
