@@ -18,3 +18,7 @@ else
 echo ".bashrc and .bash_aliases do not exist."
 fi
 fi
+
+if [ -f ~/.bashrc ]; then
+source ~/.bashrc
+fi
