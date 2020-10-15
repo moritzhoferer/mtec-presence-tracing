@@ -196,11 +196,12 @@ def main() -> None:
     print('Successfully filled and submitted D-MTEC Presence Tracing form!')
 
 
-def print_user_data(_dict, _from, _to) -> None:
+def print_user_data(_dict: dict, _from: str = None, _to: str = None) -> None:
     _out_str = 'Name:     {first_name:s} {last_name}\n' +\
                'E-Mail:   {mail_address:s}\n' +\
-               'Location: {building:s} {floor:s} {room:s}\n' +\
-               'From {f:s} to {t:s}\n'
+               'Location: {building:s} {floor:s} {room:s}\n'
+    if (_from and _to):
+        _out_str += 'From {f:s} to {t:s}\n'
 
     print(
         _out_str.format(
