@@ -12,7 +12,7 @@ source ./venv/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-Additionally, you need to install Firefox and the Geckodriver for Firefox and then you are ready to go.
+Additionally, you need to install Firefox and the Geckodriver for Firefox and then you are ready to go (Links below).
 
 To fill the form, execute this in terminal:
 
@@ -64,4 +64,4 @@ Command line commands are for Debian, Ubuntu, and related Linux distributions us
 ## TODOs
 
 * [x] Add feature to add deviating room without changing the default user data.
-* [] Restructure to make it easier to understand and to follow the instructions
+* [ ] Restructure to make it easier to understand and to follow the instructions
