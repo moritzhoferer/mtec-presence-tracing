@@ -122,15 +122,15 @@ def setup() -> None:
     print('Successfully saved user data.')
 
 
-def main() -> None:
+def main(argv) -> None:
     if not os.path.exists(user_data_path):
         setup()
 
     user_data = load_user_data()
 
     presence_date = date.today().strftime("%d.%m.%Y")
-    arrival_time = sys.argv[1][0:2] + ':' + sys.argv[1][2:4]
-    departure_time = sys.argv[2][0:2] + ':' + sys.argv[2][2:4]
+    arrival_time = argv[1][0:2] + ':' + argv[1][2:4]
+    departure_time = argv[2][0:2] + ':' + argv[2][2:4]
     
     driver = open_firefox(headless=True)
     driver.get('https://mtec.ethz.ch/news/corona/contact-tracing.html')
@@ -156,9 +156,9 @@ def main() -> None:
     departure_time_box.clear()
     departure_time_box.send_keys(departure_time)
 
-    if len(sys.argv) > 3:
-        if len(sys.argv[3]) == 5:
-            alt_location = sys.argv[3]
+    if len(argv) > 3:
+        if len(argv[3]) == 5:
+            alt_location = argv[3]
             if alt_location[:3].upper() in building_list:
                 user_data['building'] = alt_location[:3].upper()
                 user_data['floor'] = alt_location[3].upper()
@@ -215,6 +215,24 @@ def print_user_data(_dict: dict, _from: str = None, _to: str = None) -> None:
         )
     )
 
+def print_help() -> None:
+    raise NotImplementedError
+
 
 if __name__ == '__main__':
-    main()
+    import getopt
+    opts, args = getopt.getopt(sys.argv[1:], 'hsi',['help','setup','info'])
+
+    if len(opts) > 1:
+        print('WARNING: Just the first option is taken and the other will be ignored!')
+    opt = opts[0]    
+    
+    if ('-h' in opt) or ('--help' in opt):
+        print_help()
+    elif ('-s' in opt) or ('--setup' in opt):
+        setup()
+    elif ('-i' in opt) or ('--info' in opt):
+        print('Stored default user data')
+        print_user_data(load_user_data())
+    else:
+        main(args)
