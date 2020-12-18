@@ -129,8 +129,8 @@ def main(argv) -> None:
     user_data = load_user_data()
 
     presence_date = date.today().strftime("%d.%m.%Y")
-    arrival_time = argv[1][0:2] + ':' + argv[1][2:4]
-    departure_time = argv[2][0:2] + ':' + argv[2][2:4]
+    arrival_time = argv[0][0:2] + ':' + argv[0][2:4]
+    departure_time = argv[1][0:2] + ':' + argv[1][2:4]
     
     driver = open_firefox(headless=True)
     driver.get('https://mtec.ethz.ch/news/corona/contact-tracing.html')
@@ -223,16 +223,22 @@ if __name__ == '__main__':
     import getopt
     opts, args = getopt.getopt(sys.argv[1:], 'hsi',['help','setup','info'])
 
-    if len(opts) > 1:
-        print('WARNING: Just the first option is taken and the other will be ignored!')
-    opt = opts[0]    
-    
-    if ('-h' in opt) or ('--help' in opt):
-        print_help()
-    elif ('-s' in opt) or ('--setup' in opt):
-        setup()
-    elif ('-i' in opt) or ('--info' in opt):
-        print('Stored default user data')
-        print_user_data(load_user_data())
+    if opts:
+        opt = opts[0]    
+        if len(opts) > 1:
+            print(
+                'WARNING: Just the first option is taken and the other will be ignored! Option taken: ' + opt[0]
+                )
+        
+        if ('-h' in opt) or ('--help' in opt):
+            print_help()
+        elif ('-s' in opt) or ('--setup' in opt):
+            setup()
+        elif ('-i' in opt) or ('--info' in opt):
+            print('Stored default user data')
+            print_user_data(load_user_data())
+        else:
+            print('Unknown or not yet implemented option')
+            print_help()
     else:
         main(args)
