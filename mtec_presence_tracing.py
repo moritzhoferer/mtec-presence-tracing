@@ -20,8 +20,9 @@ building_list = ['LEE', 'SEC', 'SOL', 'WEV', 'ZUE']
 id_prefix = '_content_specialinterest_mtec_d-mtec_en_news_corona_coronavirus-tracking---attendance-at-d-mtec-facilities_jcr_content_par_container_'
 
 
-def open_firefox(headless=True) -> webdriver.firefox.webdriver.WebDriver:
-    print('Opening Firefox...')
+def open_firefox(headless=True, verbose=True) -> webdriver.firefox.webdriver.WebDriver:
+    if verbose:
+        print('Opening Firefox...')
     from selenium.webdriver.firefox.options import Options
     _driver_options = Options()
     if headless:
@@ -79,7 +80,7 @@ def setup() -> None:
             inquirer.Confirm(
                 'receive_copy',
                 message='Do you want to receive a copy via email?',
-                default=user_data=='False',
+                default=user_data['receive_copy'],
 
             ),
         ]
@@ -238,7 +239,7 @@ if __name__ == '__main__':
             print('Stored default user data')
             print_user_data(load_user_data())
         else:
-            print('Unknown or not yet implemented option')
+            print('{}: Unknown or not yet implemented option'.format(opt))
             print_help()
     else:
         main(args)
